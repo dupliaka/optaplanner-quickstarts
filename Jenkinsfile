@@ -3,9 +3,12 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-        git(url: 'git@github.com:dupliaka/optaplanner-quickstarts.git', branch: 'development')
+        git(url: 'https://github.com/dupliaka/optaplanner-quickstarts.git', branch: 'development')
       }
     }
 
+  }
+  environment {
+    COMPLETED_MSG = 'Build'
   }
 }
