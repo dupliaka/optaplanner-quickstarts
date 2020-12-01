@@ -15,6 +15,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'mvn clean install -PfullProfile'
+        tool(name: 'maven', type: 'maven builder')
       }
     }
 
