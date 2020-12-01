@@ -7,8 +7,11 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    COMPLETED_MSG = 'Build'
+    stage('Build') {
+      steps {
+        sh 'mvn clean install -PfullProfile '
+      }
+    }
+
   }
 }
