@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'mavenNode'
+    }
+
+  }
   stages {
     stage('Initialize') {
       steps {
@@ -9,7 +14,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh "mvn clean install -PfullProfile"
+        sh 'mvn clean install -PfullProfile'
       }
     }
 
