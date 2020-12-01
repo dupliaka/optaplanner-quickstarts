@@ -14,7 +14,6 @@ pipeline {
 
     stage('Build') {
       steps {
-        tool(name: 'maven', type: 'maven builder')
         sh '''/home/adupliak/.sdkman/candidates/maven/3.6.3/bin/mvn
  clean install -PfullProfile'''
       }
