@@ -4,13 +4,14 @@ pipeline {
     stage('Initialize') {
       steps {
         git(url: 'https://github.com/dupliaka/optaplanner-quickstarts.git', branch: 'development')
+        sh 'mvnHome = tool \'maven\''
       }
     }
 
     stage('Build') {
+      agent any
       steps {
-        tool(name: 'maven', type: 'builder')
-        sh '${tool "maven"}/bin/mvn clean install -PfullProfile'
+        sh '\'${mvnHome}/bin/mvn\' clean install -PfullProfile'
       }
     }
 
