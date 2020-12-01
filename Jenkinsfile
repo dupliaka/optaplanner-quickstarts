@@ -1,20 +1,12 @@
 pipeline {
-  agent {
-    node {
-      label 'master'
-    }
-
+  agent any
+  tools { 
+    maven 'maven'
   }
   stages {
-    stage('Initialize') {
+     stage('Build') {
       steps {
-        git(url: 'https://github.com/dupliaka/optaplanner-quickstarts.git', branch: 'development')
-      }
-    }
-
-    stage('Build') {
-      steps {
-        sh '/home/adupliak/.sdkman/candidates/maven/3.6.3/bin/mvn clean install -PfullProfile'
+        sh 'mvn clean install -PfullProfile'
       }
     }
 
