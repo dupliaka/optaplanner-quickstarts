@@ -14,8 +14,8 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh '''/home/adupliak/.sdkman/candidates/maven/3.6.3/bin/mvn
- clean install -PfullProfile'''
+        sh "/home/adupliak/.sdkman/candidates/maven/3.6.3/bin/mvn
+ clean install -PfullProfile"
       }
     }
 
