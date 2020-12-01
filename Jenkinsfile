@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        tool(name: 'maven 3.6.3', type: 'builder')
+        tool(name: 'maven', type: 'builder')
         sh 'mvn clean install -PfullProfile '
       }
     }
